@@ -1,27 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
+<title>JackSucksAtLife.com</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- Your CSS file -->
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* Fullscreen loading wrapper */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #01FFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Logo styling */
+#loader img {
+  width: 220px;
+  animation: loadSequence 2s ease-in-out forwards;
+}
+
+/* Keyframes for spinner */
+@keyframes loadSequence {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(0deg); }
+  30% { transform: rotate(360deg); }
+  40% { transform: rotate(360deg); }
+  60% { transform: rotate(720deg); }
+  100% { transform: rotate(720deg); }
+}
+
+/* Hidden main content initially */
+#main {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+</style>
 </head>
 
-<body style="margin:0; height:100vh; display:flex; justify-content:center; align-items:center;">
-<style>
-    body {
-        background-image: url("background2025.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-</style>
-<div style="display:flex; flex-direction:column; align-items:center;">
-    <p style="font-size:80px; margin:0;">🚧</p>
-    <h1 style="font-family:'Roboto', sans-serif; margin:10px 0 0 0;">Under Construction</h1>
+<body class="body">
+
+
+<!-- Loading Screen -->
+<div id="loader">
+  <img src="media/JackSucksAtLife Circle.png" alt="Logo">
 </div>
+
+<!-- Main Page Content -->
+<div id="main">
+
+  <header style="text-align:center; margin-top:10px;">
+    <img src="media/White.png" alt="Logo" width="500">
+  </header>
+
+  <p>Submit Ideas On this <a href="https://www.reddit.com/r/JackSucksAtLife" target="_blank" rel="noopener noreferrer">reddit post</a></p>
 <footer style="position:absolute; bottom:10px; width:100%; text-align:center; font-family:'Roboto', sans-serif; font-size:14px; color:#555;">
     Created by <a href="https://www.reddit.com/user/Techie_Jack" target="_blank" rel="noopener noreferrer">u/Techie_Jack</a>
 </footer>
@@ -29,6 +75,17 @@
 <footer style="position:absolute; bottom:30px; width:100%; text-align:center; font-family:'Roboto', sans-serif; font-size:14px; color:#555;">
     Not Owned by JackSucksAtLife
 </footer>
+</div>
+
+<script>
+setTimeout(() => {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+  setTimeout(() => loader.remove(), 500);
+
+  document.getElementById("main").style.opacity = "1";
+}, 2000);
+</script>
 
 </body>
 </html>
